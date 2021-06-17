@@ -8,13 +8,10 @@ def stockpicker(*nums)
             i[jindex..-1].map do |item| 
                 profit = item - j
                 itemindex = i.index(item)
-                in_english = "#{item} @ #{itemindex} - #{j} @ #{jindex} = #{profit}"
                 all_assorted_buys_sells_and_profits.push([item, itemindex, j, jindex, profit])
-                all_assorted_buys_sells_and_profits
             end
         end
         all_assorted_buys_sells_and_profits.map{|i| max_profit.push(i[4])}
-        max_profit
         index_of_max = max_profit.index(max_profit.max)
         winning_outcome = all_assorted_buys_sells_and_profits[index_of_max]
         day_to_buy_day_to_sell = winning_outcome[3], winning_outcome[1]
